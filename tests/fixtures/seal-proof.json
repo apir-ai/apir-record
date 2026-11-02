@@ -1,0 +1,124 @@
+{
+  "format": "apir-seal-proof/1",
+  "issued_by": "APIR, operated by RIPA PTY LTD, ABN 48 638 569 632",
+  "seal_id": "9218f8fd-d732-4666-8c76-94d1571a1b74",
+  "seal_url": "https://apir.ai/seal/9218f8fd-d732-4666-8c76-94d1571a1b74",
+  "attestation": "Declared human-made with software tools by Slav Ripa on 18 September 2026. APIR sealed the declaration and the files. APIR did not determine how the work was made.",
+  "recorded_at": "2026-09-18T07:30:09.594731+00:00",
+  "declaration_canonical": "{\"declarant\":{\"name\":\"Slav Ripa\"},\"declared_at\":\"2026-09-18T07:30:07.348Z\",\"files\":[{\"name\":\"specimen-triage-verdict.pdf\",\"sha256\":\"1cc5be7e5f2271bc2f46c1a2dd4231978164910c7251a0a00c1ee0f67cba098f\",\"size\":294014}],\"identifiers\":{},\"kind\":\"document\",\"method\":\"human_with_tools\",\"statement\":\"The specimen Triage Verdict published at apir.ai/specimen-triage-verdict.pdf. The business it describes, Harbourlight Aged Care Services Pty Ltd, is fictitious and every figure in it is illustrative. The document was written by me and set on the APIR document layer with software tools; no generative model produced its findings. Sealed so that the file anyone downloads can be checked against the file I published.\",\"title\":\"APIR specimen Triage Verdict, TV-2026-0000\",\"version\":1}",
+  "chain": [
+    {
+      "sequence_number": 2,
+      "chain_hash": "26ebcf3da8bfdf05b029fd5be2541e8602688eda1c0a96ab453ef9f9040d12f5",
+      "canonical": "{\"agent_id\": \"88f94b9c-47da-4bd5-89b1-97218d8f6c4f\", \"timestamp\": \"2026-09-18T07:30:09.596951+00:00\", \"event_type\": \"action\", \"input_hash\": \"ad52d7180e45f8e526901ec6c322dce8893023a3076054d43188a38211f39bc5\", \"output_hash\": \"8ebf47935542ab5a90a7efd5c973846c75d6ca7a8e4287aad2b930ae42d47b60\", \"data_accessed\": {\"attestation\": \"Declared human-made with software tools by Slav Ripa on 18 September 2026. APIR sealed the declaration and the files. APIR did not determine how the work was made.\", \"declaration\": {\"kind\": \"document\", \"files\": [{\"name\": \"specimen-triage-verdict.pdf\", \"size\": 294014, \"sha256\": \"1cc5be7e5f2271bc2f46c1a2dd4231978164910c7251a0a00c1ee0f67cba098f\"}], \"title\": \"APIR specimen Triage Verdict, TV-2026-0000\", \"method\": \"human_with_tools\", \"version\": 1, \"declarant\": {\"name\": \"Slav Ripa\"}, \"statement\": \"The specimen Triage Verdict published at apir.ai/specimen-triage-verdict.pdf. The business it describes, Harbourlight Aged Care Services Pty Ltd, is fictitious and every figure in it is illustrative. The document was written by me and set on the APIR document layer with software tools; no generative model produced its findings. Sealed so that the file anyone downloads can be checked against the file I published.\", \"declared_at\": \"2026-09-18T07:30:07.348Z\", \"identifiers\": {}}, \"files_sha256\": \"8ebf47935542ab5a90a7efd5c973846c75d6ca7a8e4287aad2b930ae42d47b60\", \"canonical_sha256\": \"ad52d7180e45f8e526901ec6c322dce8893023a3076054d43188a38211f39bc5\"}, \"prev_chain_hash\": \"fedbbb9cd3fca4362046949650a6fa1ccad8473cf04a352b06b2ad4930e2dcc9\", \"sequence_number\": 2, \"reasoning_summary\": \"Seal: APIR specimen Triage Verdict, TV-2026-0000. Declared human-made with software tools by Slav Ripa on 18 September 2026. APIR sealed the declaration and the files. APIR did not determine how the work was made.\"}"
+    }
+  ],
+  "anchor": {
+    "anchored_at": "2026-09-19T00:00:07.246282+00:00",
+    "head_chain_hash": "26ebcf3da8bfdf05b029fd5be2541e8602688eda1c0a96ab453ef9f9040d12f5",
+    "head_sequence_number": 2,
+    "merkle_root": "fa143627a9664ddd76b5d900c2d026ae61f4dd0a36f6836ff7379b46ba11ef8b",
+    "merkle_rule": "Leaves are every chain head in chain_heads, sorted as text. Each pair becomes sha256 of the two hex strings concatenated; an odd leaf is paired with itself; repeat until one remains.",
+    "chain_heads": [
+      {
+        "agent_id": "0125a3c5-a36b-49ff-a119-a08b3963abdc",
+        "chain_hash": "4e60c4c912b542ed4650c4ec49ee5c422cabf06fa01d033bbb6209a2898422a7"
+      },
+      {
+        "agent_id": "0aee426e-42b8-444f-b1f5-20cfd729f82a",
+        "chain_hash": "a25d54ec7b2f4472ab82b3d3fd60afc624581fd5c7bf7d022f3f04094f4dc010"
+      },
+      {
+        "agent_id": "180a95e5-9187-4502-b740-7021463f0d93",
+        "chain_hash": "fa78c2395550a831b47a9dd5b161a3a14d6e6401b258b317de390948bc76ac79"
+      },
+      {
+        "agent_id": "2a0dac32-e305-4758-8f24-ece861dfdbe6",
+        "chain_hash": "f9039e1a3e7381d738a85e3c6d88ef3d5f2449bf4536971ddfdfac7105337ee2"
+      },
+      {
+        "agent_id": "2fd9a993-8c50-4161-9486-d722af60e2e7",
+        "chain_hash": "849ab9ecdeeb8f15bd4478137e986e884afc43350f8ccc9709e0ff17a6e3113c"
+      },
+      {
+        "agent_id": "32d77459-4718-46c5-a6c2-706234e74c28",
+        "chain_hash": "5ecd0ce8dc46a1ae705acf6d8323d82cc6718c1dfdda63d30341bace5e246ed9"
+      },
+      {
+        "agent_id": "531105a5-62ff-4c76-acce-6d9d3020c73a",
+        "chain_hash": "218efc66f13b29fbce85526b65607bd7f8e94d622aefe152a8cfb0c1dc7c7d18"
+      },
+      {
+        "agent_id": "6866fe25-4fcb-404b-a527-00a24c7edc70",
+        "chain_hash": "0e52e5a32b3243d215dce90e73fdff88f29a9bf2b900c35b04f67a4f844249aa"
+      },
+      {
+        "agent_id": "6d9e771a-091b-4409-981e-289a60ecbf4b",
+        "chain_hash": "9ed82fe5f539c56ff5c9079e3153d2fab061a2130fe37797c0b35a35c7f84510"
+      },
+      {
+        "agent_id": "7e7fb9c8-6127-40dd-8f1c-cd7c5e63d7d9",
+        "chain_hash": "01463ce44dfbc28fbfb11848b1d91667fc992a446f41a22fb1583be454925fbc"
+      },
+      {
+        "agent_id": "88f94b9c-47da-4bd5-89b1-97218d8f6c4f",
+        "chain_hash": "26ebcf3da8bfdf05b029fd5be2541e8602688eda1c0a96ab453ef9f9040d12f5"
+      },
+      {
+        "agent_id": "8c7607d2-e91e-436d-8b03-1f5a474a260b",
+        "chain_hash": "bb723f8755c6ceff3484e9e52fd58f3b745af273933a5409b4295acf3371eaea"
+      },
+      {
+        "agent_id": "af6df1c4-c10f-405d-93e7-74f2afa20a8a",
+        "chain_hash": "b9ed2da88a829256d509cd89741a6b99d02c34035c3ffba69e9c9804024e0913"
+      },
+      {
+        "agent_id": "bc9f2afd-725e-40e1-9798-e5f3487e0928",
+        "chain_hash": "9699d1bb2d3109a73d03c01b7b1d1b5eef6c651a80c1f1856c4e49d4d912f9e0"
+      },
+      {
+        "agent_id": "bd2a9300-b564-4be1-a1df-305ecb97bfab",
+        "chain_hash": "0054cac27cb9914f69338d8ed943a6c3e9db55682ffb99d14b362ae827a5e288"
+      },
+      {
+        "agent_id": "bff685c6-e5e0-4e93-b8eb-4d300afaed50",
+        "chain_hash": "2b189e6fdd52937e4597ce49d73b017ec07b6449013bfed9f62ff4facfaddc48"
+      },
+      {
+        "agent_id": "c6d34e11-ec67-4405-81f2-e28659f7d914",
+        "chain_hash": "9177640b3e857aab0a84f14d0dd498061757ffdf691744546a8cc365bf8d7902"
+      },
+      {
+        "agent_id": "d0d290ca-5d3b-453f-8cb1-4e69030950b0",
+        "chain_hash": "136b546bce4d80b855e879037245a8bd6b0241a3c29584c53d501463750683f1"
+      },
+      {
+        "agent_id": "db14eae9-c854-439e-8000-4b239452b6c1",
+        "chain_hash": "e8f506488b4bf34c9f16e861abd17d1a545e1652d7217a37892c0ec865802476"
+      },
+      {
+        "agent_id": "e85df0ae-959e-4907-85da-bb152e053909",
+        "chain_hash": "b43ef6a5c3a9cb108265d9f106ca8626f33c6d430a68f672bc84d7aee1b1fd3d"
+      },
+      {
+        "agent_id": "f93b198b-35b4-4160-aa1a-8b213abb24d4",
+        "chain_hash": "9a815668f7d449b55a1b5c76426d544d510d3603bb27f04aaafbb7a262f10707"
+      }
+    ],
+    "tsa_url": "https://freetsa.org/tsr",
+    "tsa_imprint_rule": "The authority was sent sha256 of the merkle_root hex string, as UTF-8 text with no newline.",
+    "tsa_response_der_b64": "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",
+    "tsa_certificates": {
+      "tsa_crt": "https://freetsa.org/files/tsa.crt",
+      "ca_pem": "https://freetsa.org/files/cacert.pem"
+    }
+  },
+  "not_yet_anchored": null,
+  "how_to_check": [
+    "Open verify-seal.html (apir.ai/proof/verify-seal, save it once and it works offline) and load this file, and the file you hold.",
+    "It checks: the file is one that was sealed; the declaration hashes to the sealed event; every chain link hashes and connects; the head is in that night's heads; the heads rebuild the Merkle root; the root is what the timestamp authority signed.",
+    "The authority's signature itself is checked with openssl: openssl ts -verify -in seal.tsr -data root.txt -CAfile cacert.pem -untrusted tsa.crt (the checker saves seal.tsr and root.txt for you)."
+  ],
+  "what_it_proves": "That this declaration, over these exact files, was on APIR's hash chain by the time the outside authority timestamped it, and has not changed since.",
+  "what_it_does_not": "APIR sealed the declaration and the files. It did not determine how the work was made, whether the contents are true, or who owns anything described."
+}

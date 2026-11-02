@@ -1,0 +1,148 @@
+{
+  "about": "Test vectors for apir-record. 'postgres' holds canonical texts produced by APIR's database function private.bb_event_canonical on synthetic inputs (2026-11-01), each with the SHA-256 the database printed. 'recorded' holds events as stored in APIR's Black Box, with their stored chain hash. 'act_form' holds stableStringify outputs from apir-seal.mjs under Node. Parse data_accessed_json with apir_record.load_json.",
+  "postgres": [
+    {
+      "name": "escapes, numbers, key order, offset timestamp",
+      "event": {
+        "agent_id": "6F1C2E0A-0000-4000-8000-00000000000A",
+        "sequence_number": 7,
+        "event_type": "tool_call",
+        "input_hash": null,
+        "output_hash": "abababababababababababababababababababababababababababababababab",
+        "reasoning_summary": "line1\nline2\t\"quoted\" back\\slash / \u0001 \b\f\r end",
+        "timestamp": "2026-01-02 03:04:05.5+09:30",
+        "prev_chain_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "data_accessed_json": "{\"b\": 1, \"aa\": [1.50, 1e3, -0, 0.0000001, 12345678901234567890123, 1E-7, -1.5e+2, 2.5E1, true, false, null, [], {}], \"\\u00e9\": \"\\u00fc\", \"ab\": \"\\ud83d\\ude00 \\u4e2d\\u6587\", \"z\": {\"y\": 1, \"x\": 2, \"y\": 3}, \"ctl\": \"a\\u001fb\\u007fc\", \"\": \"empty key\"}",
+      "canonical": "{\"agent_id\": \"6f1c2e0a-0000-4000-8000-00000000000a\", \"timestamp\": \"2026-01-01T17:34:05.5+00:00\", \"event_type\": \"tool_call\", \"input_hash\": null, \"output_hash\": \"abababababababababababababababababababababababababababababababab\", \"data_accessed\": {\"\": \"empty key\", \"b\": 1, \"z\": {\"x\": 2, \"y\": 3}, \"aa\": [1.50, 1000, 0, 0.0000001, 12345678901234567890123, 0.0000001, -150, 25, true, false, null, [], {}], \"ab\": \"\ud83d\ude00 \u4e2d\u6587\", \"\u00e9\": \"\u00fc\", \"ctl\": \"a\\u001fb\u007fc\"}, \"prev_chain_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"sequence_number\": 7, \"reasoning_summary\": \"line1\\nline2\\t\\\"quoted\\\" back\\\\slash / \\u0001 \\b\\f\\r end\"}",
+      "chain_hash": "6678c90c5637cb4a62ea34275e0c01882df93d917270fd75a43eb9c7ea157f4f"
+    },
+    {
+      "name": "nulls everywhere, whole-second timestamp, Postgres text offset",
+      "event": {
+        "agent_id": "00000000-0000-4000-8000-000000000001",
+        "sequence_number": 1,
+        "event_type": "registration",
+        "input_hash": null,
+        "output_hash": null,
+        "reasoning_summary": null,
+        "timestamp": "2026-03-04 05:06:07+00",
+        "prev_chain_hash": null
+      },
+      "data_accessed_json": "null",
+      "canonical": "{\"agent_id\": \"00000000-0000-4000-8000-000000000001\", \"timestamp\": \"2026-03-04T05:06:07+00:00\", \"event_type\": \"registration\", \"input_hash\": null, \"output_hash\": null, \"data_accessed\": null, \"prev_chain_hash\": null, \"sequence_number\": 1, \"reasoning_summary\": null}",
+      "chain_hash": "d042eed53ab90c2cd8aed45a21cdd519c925e0a768ac209bfa91e10f6f517b1d"
+    },
+    {
+      "name": "largest bigint, empty summary, nested order, scale kept, trailing zeros of the fraction",
+      "event": {
+        "agent_id": "00000000-0000-4000-8000-000000000002",
+        "sequence_number": 9223372036854775807,
+        "event_type": "decision",
+        "input_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "output_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "reasoning_summary": "",
+        "timestamp": "2026-12-31 23:59:59.000100+00",
+        "prev_chain_hash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "data_accessed_json": "{\"nested\": {\"deeper\": {\"k\": [{\"b\": 2, \"a\": 1}]}}, \"num\": 0.10, \"neg\": -12.3400}",
+      "canonical": "{\"agent_id\": \"00000000-0000-4000-8000-000000000002\", \"timestamp\": \"2026-12-31T23:59:59.0001+00:00\", \"event_type\": \"decision\", \"input_hash\": \"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\", \"output_hash\": \"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\", \"data_accessed\": {\"neg\": -12.3400, \"num\": 0.10, \"nested\": {\"deeper\": {\"k\": [{\"a\": 1, \"b\": 2}]}}}, \"prev_chain_hash\": \"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\", \"sequence_number\": 9223372036854775807, \"reasoning_summary\": \"\"}",
+      "chain_hash": "ad0f3c70ef436094c20b64a7f70fdda51b4ba71319ad3e3089d79d10a3a43fd5"
+    }
+  ],
+  "recorded": [
+    {
+      "name": "nested object, boolean, non-ASCII summary",
+      "event": {
+        "agent_id": "db14eae9-c854-439e-8000-4b239452b6c1",
+        "sequence_number": 2986,
+        "event_type": "compliance",
+        "input_hash": "458f8cea367606e86ca148a7d778a57200bbcac501850c9d4110585a2582ca91",
+        "output_hash": "e4f244a852bb6737b453617a72614175b36183d0ff9eaacaec0e512b24b802b0",
+        "reasoning_summary": "Reviewed 8 staged outbound draft(s): 2 pass \u00b7 6 edit \u00b7 0 block",
+        "timestamp": "2026-09-28T18:15:53.359018+00:00",
+        "prev_chain_hash": "68bbfc89ce5bad5248f388d4135859cc6596dfc4852d72b70107cd9f7a7bfe75"
+      },
+      "data_accessed_json": "{\"model\": \"anthropic/claude-fable-5\", \"counts\": {\"edit\": 6, \"pass\": 2, \"block\": 0}, \"used_fallback\": false}",
+      "chain_hash": "ac1121b1567dad57de73e7e73bbf739ae72afbb62140d51bf694e225d12b86c9"
+    },
+    {
+      "name": "decimal, nulls, fraction with a trailing zero dropped",
+      "event": {
+        "agent_id": "e2c1fa20-93f7-4aa3-91a9-7d4985ca5ad7",
+        "sequence_number": 33,
+        "event_type": "action",
+        "input_hash": null,
+        "output_hash": null,
+        "reasoning_summary": "Action: report \u00b7 risk low",
+        "timestamp": "2026-05-21T00:01:19.98478+00:00",
+        "prev_chain_hash": "dca85382e411b78277d11ba153043df78c5d509ca7fb28a995b36361388921db"
+      },
+      "data_accessed_json": "{\"action_id\": \"62715fcc-ba1a-41e0-a3f9-e192edf89b63\", \"risk_level\": \"low\", \"action_type\": \"report\", \"tokens_used\": null, \"confidence_score\": 0.95, \"human_review_required\": false}",
+      "chain_hash": "3bf6ec4d927f9daeb2ad0d7aa1eff9f975356bb07760256f4fbaa7ec5ffb3051"
+    },
+    {
+      "name": "plain",
+      "event": {
+        "agent_id": "6d9e771a-091b-4409-981e-289a60ecbf4b",
+        "sequence_number": 3497,
+        "event_type": "evidence_gathered",
+        "input_hash": null,
+        "output_hash": "42ff65af03604781ebd55b2eeb986afcb3566a5b51cbab23af3d068db846a5f8",
+        "reasoning_summary": "Gathered mandate + 2 candidate lead(s)",
+        "timestamp": "2026-10-22T04:11:56.491269+00:00",
+        "prev_chain_hash": "5a6b28f2e570353678c8bbc27452875b1e8451a94e4a982dd6938cc77ff232a9"
+      },
+      "data_accessed_json": "{\"candidate_count\": 2}",
+      "chain_hash": "335415c138971b493d49546944a69e01f6ef06401ae076c6c4ff385e7ca03b7c"
+    },
+    {
+      "name": "output event",
+      "event": {
+        "agent_id": "8c7607d2-e91e-436d-8b03-1f5a474a260b",
+        "sequence_number": 2417,
+        "event_type": "output",
+        "input_hash": null,
+        "output_hash": "692d7749f141de3dcf63b5da1c13b1ff6b2ece4c403af5877c4ce7d3e29f3e6f",
+        "reasoning_summary": "Staged 4 draft(s) for human review (1 dropped by honesty lint)",
+        "timestamp": "2026-10-31T20:50:30.837536+00:00",
+        "prev_chain_hash": "fbe502a6f7ba197f1a7c7b08d2e2fe7612c376def8a5b2920e38936363328ae2"
+      },
+      "data_accessed_json": "{\"run_id\": \"e10ceef3-f8b5-4849-b7b5-244486d56516\", \"staged\": 4, \"model_id\": \"anthropic/claude-opus-5.5\", \"violations\": 1}",
+      "chain_hash": "aee651200e52558018158c10810ecdbcf7454a53b7eb753817e6a16a7f8c1ef1"
+    },
+    {
+      "name": "empty object",
+      "event": {
+        "agent_id": "b5a10283-9f8f-418c-b502-a0da71e8e82c",
+        "sequence_number": 321,
+        "event_type": "system",
+        "input_hash": null,
+        "output_hash": null,
+        "reasoning_summary": "SIEM streaming connectivity test (recorder settings enabled)",
+        "timestamp": "2026-06-11T23:54:46.595381+00:00",
+        "prev_chain_hash": "98f2cbd69c6c448a1390f118a9f917331e9044826b12b7ef85cbdb7e644ddb6e"
+      },
+      "data_accessed_json": "{}",
+      "chain_hash": "c3f9d843017bb69797d43b666f26d11ba26ed29d06724b21e0131d7d49c97016"
+    }
+  ],
+  "act_form": [
+    {
+      "json": "{\"b\":1,\"a\":[1.5,1e21,1e-7,-0,100,0.1,1.50,123456789012345678901234567890,9007199254740993,5e-324,1.7976931348623157e308,0.000001,1e-6,123e-20,2.5e20,2.5e21,-1.25e-9],\"\u00e9\":\"x\",\"\ud83d\ude00\":\"astral\",\"\uffff\":\"bmp-high\",\"ctl\":\"\\u0001\\u007f\\n\\\"\\\\/\\b\\f\\r\\t\",\"lone\":\"\\ud800x\",\"nested\":{\"z\":null,\"y\":true,\"x\":false,\"w\":[],\"v\":{}}}",
+      "stable_stringify": "{\"a\":[1.5,1e+21,1e-7,0,100,0.1,1.5,1.2345678901234568e+29,9007199254740992,5e-324,1.7976931348623157e+308,0.000001,0.000001,1.23e-18,250000000000000000000,2.5e+21,-1.25e-9],\"b\":1,\"ctl\":\"\\u0001\u007f\\n\\\"\\\\/\\b\\f\\r\\t\",\"lone\":\"\\ud800x\",\"nested\":{\"v\":{},\"w\":[],\"x\":false,\"y\":true,\"z\":null},\"\u00e9\":\"x\",\"\ud83d\ude00\":\"astral\",\"\uffff\":\"bmp-high\"}"
+    },
+    {
+      "json": "\"just a string\"",
+      "stable_stringify": "\"just a string\""
+    },
+    {
+      "json": "[3,\"a\",null,{\"k\":\"v\"}]",
+      "stable_stringify": "[3,\"a\",null,{\"k\":\"v\"}]"
+    },
+    {
+      "json": "{\"act\":\"statement\",\"seal_id\":\"0337be1e-1474-43b7-8c76-67fcac2cf514\",\"actor\":{\"name\":\"Test Fixture\"},\"at\":\"2026-10-30T23:45:29.622Z\",\"body\":{\"components\":[{\"key\":\"image\",\"band\":\"none\"}],\"files\":[]},\"version\":1}",
+      "stable_stringify": "{\"act\":\"statement\",\"actor\":{\"name\":\"Test Fixture\"},\"at\":\"2026-10-30T23:45:29.622Z\",\"body\":{\"components\":[{\"band\":\"none\",\"key\":\"image\"}],\"files\":[]},\"seal_id\":\"0337be1e-1474-43b7-8c76-67fcac2cf514\",\"version\":1}"
+    }
+  ]
+}

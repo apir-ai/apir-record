@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "apir-record"
+version = "0.2.0"
+description = "Check an APIR agent record offline: tamper-evident, hash-chained work history for AI agents, with RFC 3161 timestamps."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "RIPA PTY LTD trading as APIR", email = "ripa@apir.ai" }]
+keywords = ["ai-agents", "audit-trail", "tamper-evident", "hash-chain", "rfc3161", "verifiable", "black-box", "agent-identity"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security :: Cryptography",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: System :: Logging",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://apir.ai"
+Repository = "https://github.com/apir-ai/apir-record"
+Issues = "https://github.com/apir-ai/apir-record/issues"
+Specification = "https://apir.ai/agent-record-specification"
+"Check an agent" = "https://apir.ai/check-agent"
+
+[project.scripts]
+apir-record = "apir_record.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["apir_record"]
+
+[tool.hatch.build.targets.sdist]
+include = ["apir_record", "tests", "README.md", "LICENSE", "pyproject.toml"]
