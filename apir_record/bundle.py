@@ -249,7 +249,7 @@ def verify_bundle(files: Mapping[str, bytes]) -> dict:
     labelled = sum(1 for e in events if isinstance(e, Mapping) and isinstance(e.get("data_accessed"), Mapping)
                    and "trust_score_after" in e["data_accessed"])
     if labelled:
-        step(None, f"{labelled} audit entries, written before 3 November 2026, call the hourly monitor's reading a trust "
+        step(None, f"{labelled} audit entries, written up to 18:00 UTC on 2 November 2026, call the hourly monitor's reading a trust "
              "score. It is not a rating: a rating comes only from the Trust Genome, and an agent without one is Unrated. "
              "Rewriting those entries would break their hashes, so their words stay.", None, "note")
 
